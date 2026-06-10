@@ -171,8 +171,8 @@
     /* ---------- ファーストビュー ---------- */
     .hero {
       position: relative;
-      display: grid;
-      align-content: end;
+      display: flex;
+      flex-direction: column;
       min-height: 94svh;
       isolation: isolate;
       overflow: hidden;
@@ -202,8 +202,6 @@
     }
 
     .hero__bar {
-      position: absolute;
-      inset: 0 0 auto 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -224,6 +222,10 @@
       width: 26px; height: 1px;
       background: var(--gold);
     }
+    /* 画面高が低い端末（iPhone Safari等）ではタイトルに被るため非表示 */
+    @media (max-height: 779px) {
+      .hero__vertical { display: none; }
+    }
     .hero__vertical {
       position: absolute;
       top: 84px;
@@ -238,7 +240,10 @@
       text-shadow: 0 1px 10px rgba(34, 24, 21, 0.55);
     }
 
-    .hero__content { padding: 0 var(--pad) 30px; }
+    .hero__content {
+      margin-block-start: auto;
+      padding: 28px var(--pad) 26px;
+    }
 
     .hero__eyebrow {
       display: inline-flex;
@@ -256,7 +261,7 @@
     .hero__title {
       margin: 0;
       font-family: var(--font-heading);
-      font-size: clamp(1.92rem, 8.2vw, 2.6rem);
+      font-size: clamp(1.74rem, 7.6vw, 2.6rem);
       font-weight: 500;
       letter-spacing: 0.05em;
       line-height: 1.42;
@@ -266,10 +271,10 @@
 
     .hero__copy {
       max-width: 30em;
-      margin: 16px 0 0;
-      font-size: 0.99rem;
+      margin: 14px 0 0;
+      font-size: 0.95rem;
       font-weight: 500;
-      line-height: 2;
+      line-height: 1.9;
       text-shadow: 0 1px 10px rgba(34, 24, 21, 0.5);
     }
 
@@ -288,12 +293,12 @@
       align-items: flex-end;
       justify-content: flex-end;
       gap: 12px;
-      margin: 20px 0 4px;
+      margin: 16px 0 0;
     }
     .hero__ring figcaption {
       padding-bottom: 6px;
       font-family: var(--font-accent);
-      font-size: 0.94rem;
+      font-size: 0.88rem;
       letter-spacing: 0.1em;
       line-height: 1.8;
       text-align: right;
@@ -301,7 +306,7 @@
     }
     .hero__ring-frame {
       flex: none;
-      width: 124px;
+      width: 104px;
       padding: 6px 6px 10px;
       background: var(--white);
       border-radius: 6px;
