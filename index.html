@@ -1,0 +1,1558 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>手作り結婚指輪・婚約指輪｜鎌倉彫金工房（LPデザインモック 2026-06）</title>
+  <meta name="description" content="一本の棒状の金属から、ふたりの手で結婚指輪・婚約指輪をつくる鎌倉彫金工房。職人サポートで初めてでも安心。空席確認・ご予約はこちらから。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
+  <style>
+    /* ============================================================
+       鎌倉彫金工房 手作り結婚指輪・婚約指輪 LP デザインモック v2
+       2026-06-10 / スマホファースト（max 750px）
+       ============================================================ */
+    :root {
+      --bg-main: #F4F2EC;
+      --bg-sub: #ECE9E2;
+      --bg-beige: #E1DACB;
+      --white: #FFFFFF;
+      --text: #221815;
+      --brown-heading: #4F362C;
+      --brown-dark: #685851;
+      --mocha-brand: #A58F86;
+      --mocha-band: #C3AD97;
+      --gold: #D0A773;
+      --cta: #788255;
+      --cta-deep: #737D50;
+      --danger: #B33636;
+      --red-note: #D32F2F;
+
+      --line: rgba(79, 54, 44, 0.15);
+      --line-strong: rgba(79, 54, 44, 0.30);
+      --shadow: rgba(34, 24, 21, 0.14);
+      --shadow-soft: rgba(34, 24, 21, 0.07);
+      --cta-glow: rgba(115, 125, 80, 0.26);
+      --white-soft: rgba(255, 255, 255, 0.90);
+
+      --font-body: "Noto Sans JP", sans-serif;
+      --font-heading: "Noto Serif JP", serif;
+      --font-accent: "Hina Mincho", serif;
+
+      --pad: 24px;
+      --radius: 10px;
+      --radius-pill: 999px;
+      --page-max: 750px;
+    }
+
+    * , *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 16px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg-sub);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-feature-settings: "palt";
+      line-height: 1.9;
+      overflow-x: clip;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img { display: block; width: 100%; height: auto; }
+    figure { margin: 0; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+
+    /* ---------- ページ枠（PCは中央寄せ・左右余白） ---------- */
+    .lp {
+      width: min(100%, var(--page-max));
+      margin-inline: auto;
+      background: var(--bg-main);
+      box-shadow: 0 0 44px var(--shadow-soft);
+    }
+
+    /* ---------- 共通セクション ---------- */
+    .section { padding: 76px var(--pad); }
+    .section.-sub   { background: var(--bg-sub); }
+    .section.-white { background: var(--white); }
+    .section.-mocha { background: var(--mocha-band); }
+
+    .section__head { display: grid; gap: 12px; margin-block-end: 36px; }
+
+    .section__label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0;
+      color: var(--mocha-brand);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.24em;
+    }
+    .section__label::before {
+      content: "";
+      width: 24px; height: 1px;
+      background: var(--gold);
+    }
+    .section.-mocha .section__label { color: var(--brown-heading); }
+    .section.-mocha .section__label::before { background: var(--brown-heading); }
+
+    .section__title {
+      margin: 0;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.58rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      line-height: 1.52;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    .section__title span { display: block; }
+
+    .section__lead {
+      margin: 6px 0 0;
+      color: var(--brown-dark);
+      font-size: 0.96rem;
+    }
+
+    /* ---------- CTAボタン ---------- */
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      min-height: 60px;
+      padding: 16px 22px;
+      border: 0;
+      border-radius: var(--radius-pill);
+      background: var(--cta);
+      color: var(--white);
+      font-size: 1.04rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      line-height: 1;
+      white-space: nowrap;
+      cursor: pointer;
+      box-shadow: 0 6px 0 var(--cta-deep), 0 18px 30px var(--cta-glow);
+      transition: transform 150ms ease, box-shadow 150ms ease;
+    }
+    .cta-button::after {
+      content: "";
+      width: 7px; height: 7px;
+      border-top: 2px solid currentColor;
+      border-right: 2px solid currentColor;
+      transform: rotate(45deg);
+      flex: none;
+    }
+    .cta-button:hover, .cta-button:focus-visible {
+      transform: translateY(3px);
+      box-shadow: 0 3px 0 var(--cta-deep), 0 10px 18px var(--cta-glow);
+    }
+    .cta-button:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+
+    .cta-note {
+      margin: 12px 0 0;
+      color: var(--brown-dark);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    /* ---------- ファーストビュー ---------- */
+    .hero {
+      position: relative;
+      display: grid;
+      align-content: end;
+      min-height: 94svh;
+      isolation: isolate;
+      overflow: hidden;
+      color: var(--white);
+      background: var(--brown-dark);
+    }
+    .hero__photo { position: absolute; inset: 0; z-index: -2; }
+    .hero__photo img {
+      height: 100%;
+      object-fit: cover;
+      object-position: 58% 32%;
+    }
+    /* 写真の可読性スクリム（下部のみ暗く） */
+    .hero::after {
+      content: "";
+      position: absolute; inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(34, 24, 21, 0.30) 0%,
+        rgba(34, 24, 21, 0.06) 34%,
+        rgba(34, 24, 21, 0.34) 62%,
+        rgba(34, 24, 21, 0.78) 100%
+      );
+    }
+
+    .hero__bar {
+      position: absolute;
+      inset: 0 0 auto 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px var(--pad) 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: var(--font-heading);
+      font-size: 0.98rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-shadow: 0 1px 12px rgba(34, 24, 21, 0.5);
+    }
+    .brand::before {
+      content: "";
+      width: 26px; height: 1px;
+      background: var(--gold);
+    }
+    .hero__vertical {
+      position: absolute;
+      top: 84px;
+      right: 20px;
+      margin: 0;
+      color: var(--white-soft);
+      font-family: var(--font-accent);
+      font-size: 1.02rem;
+      letter-spacing: 0.3em;
+      line-height: 1.9;
+      writing-mode: vertical-rl;
+      text-shadow: 0 1px 10px rgba(34, 24, 21, 0.55);
+    }
+
+    .hero__content { padding: 0 var(--pad) 30px; }
+
+    .hero__eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 14px;
+      padding: 6px 14px 7px;
+      border: 1px solid var(--white-soft);
+      border-radius: var(--radius-pill);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+    }
+
+    .hero__title {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(1.92rem, 8.2vw, 2.6rem);
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      line-height: 1.42;
+      text-shadow: 0 2px 18px rgba(34, 24, 21, 0.45);
+    }
+    .hero__title span { display: block; }
+
+    .hero__copy {
+      max-width: 30em;
+      margin: 16px 0 0;
+      font-size: 0.99rem;
+      font-weight: 500;
+      line-height: 2;
+      text-shadow: 0 1px 10px rgba(34, 24, 21, 0.5);
+    }
+
+    .hero__cta { margin-block-start: 22px; }
+
+    .hero__note {
+      margin: 12px 0 0;
+      color: var(--white-soft);
+      font-size: 0.78rem;
+      text-align: center;
+    }
+
+    /* 指輪のポラロイド風インセット */
+    .hero__ring {
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: 12px;
+      margin: 20px 0 4px;
+    }
+    .hero__ring figcaption {
+      padding-bottom: 6px;
+      font-family: var(--font-accent);
+      font-size: 0.94rem;
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      text-align: right;
+      text-shadow: 0 1px 10px rgba(34, 24, 21, 0.55);
+    }
+    .hero__ring-frame {
+      flex: none;
+      width: 124px;
+      padding: 6px 6px 10px;
+      background: var(--white);
+      border-radius: 6px;
+      box-shadow: 0 14px 30px var(--shadow);
+      transform: rotate(2.5deg);
+    }
+    .hero__ring-frame img {
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    /* ---------- 信頼ストリップ（FV直下） ---------- */
+    .trust-strip {
+      padding: 22px var(--pad) 18px;
+      background: var(--white);
+      border-block-end: 1px solid var(--line);
+    }
+    .trust-strip__grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .trust-strip__item {
+      min-width: 0;
+      padding-inline: 8px;
+      text-align: center;
+    }
+    .trust-strip__item + .trust-strip__item { border-inline-start: 1px solid var(--line); }
+    .trust-strip__item strong {
+      display: block;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.18rem;
+      font-weight: 600;
+      line-height: 1.25;
+    }
+    .trust-strip__item span {
+      display: block;
+      margin-block-start: 4px;
+      color: var(--brown-dark);
+      font-size: 0.66rem;
+      line-height: 1.5;
+    }
+    .trust-strip__foot {
+      margin: 12px 0 0;
+      color: var(--mocha-brand);
+      font-size: 0.66rem;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    /* ---------- 予約ストリップ（CTA帯） ---------- */
+    .booking-strip {
+      padding: 44px var(--pad) 48px;
+      background: var(--bg-beige);
+      text-align: center;
+    }
+    .booking-strip__copy {
+      margin: 0;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      line-height: 1.6;
+    }
+    .booking-strip__chips {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin: 16px 0 20px;
+      padding: 0;
+      list-style: none;
+    }
+    .booking-strip__chips li {
+      padding: 6px 13px 7px;
+      background: var(--white);
+      border-radius: var(--radius-pill);
+      color: var(--brown-dark);
+      font-size: 0.76rem;
+      font-weight: 500;
+    }
+
+    /* ---------- ABOUT ---------- */
+    .about-photo img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+    .about-grid { display: grid; gap: 22px; }
+
+    .comparison {
+      display: grid;
+      gap: 10px;
+      margin: 0;
+    }
+    .comparison__row {
+      display: grid;
+      grid-template-columns: 104px minmax(0, 1fr);
+      gap: 14px;
+      padding: 16px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .comparison__row dt {
+      color: var(--brown-heading);
+      font-weight: 500;
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+    .comparison__row dd {
+      margin: 0;
+      color: var(--brown-dark);
+      font-size: 0.9rem;
+    }
+    .comparison__row.-feature {
+      background: var(--bg-main);
+      border: 1px solid var(--gold);
+    }
+    .comparison__row.-feature dt { color: var(--brown-heading); }
+    .comparison__row.-feature dd { color: var(--text); }
+    .comparison__tag {
+      display: inline-block;
+      margin-block-end: 6px;
+      padding: 2px 9px 3px;
+      background: var(--gold);
+      border-radius: var(--radius-pill);
+      color: var(--white);
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+    }
+
+    .about-accent {
+      margin: 34px 0 0;
+      color: var(--brown-heading);
+      font-family: var(--font-accent);
+      font-size: 1.32rem;
+      letter-spacing: 0.18em;
+      text-align: center;
+    }
+    .about-accent::after {
+      content: "";
+      display: block;
+      width: 38px; height: 1px;
+      margin: 14px auto 0;
+      background: var(--gold);
+    }
+
+    /* ---------- 選ばれる理由 ---------- */
+    .reason-list { display: grid; gap: 20px; }
+    .reason-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: clip;
+    }
+    .reason-card img {
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+    .reason-card__body { padding: 20px 20px 24px; }
+    .reason-card__num {
+      display: block;
+      margin-block-end: 6px;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+    }
+    .reason-card h3 {
+      margin: 0;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.17rem;
+      font-weight: 500;
+      letter-spacing: 0.03em;
+      line-height: 1.55;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    .reason-card p {
+      margin: 10px 0 0;
+      color: var(--brown-dark);
+      font-size: 0.92rem;
+    }
+
+    /* ---------- 制作の流れ ---------- */
+    .flow-quote {
+      margin: 0 calc(var(--pad) * -1) 40px;
+      padding: 42px var(--pad) 44px;
+      background: var(--mocha-band);
+      text-align: center;
+    }
+    .flow-quote p {
+      margin: 0;
+      color: var(--brown-heading);
+      font-family: var(--font-accent);
+      font-size: 1.62rem;
+      letter-spacing: 0.16em;
+      line-height: 1.7;
+    }
+    .flow-quote small {
+      display: block;
+      margin-block-start: 10px;
+      color: var(--brown-heading);
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+    }
+
+    .flow {
+      position: relative;
+      display: grid;
+      gap: 14px;
+    }
+    .flow::before {
+      content: "";
+      position: absolute;
+      top: 26px; bottom: 26px; left: 25px;
+      width: 1px;
+      background: var(--line-strong);
+    }
+    .flow__step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 52px minmax(0, 1fr);
+      gap: 16px;
+      align-items: start;
+    }
+    .flow__num {
+      display: inline-grid;
+      place-items: center;
+      width: 52px; height: 52px;
+      border-radius: var(--radius-pill);
+      background: var(--brown-heading);
+      border: 3px solid var(--bg-main);
+      color: var(--white);
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      line-height: 1;
+    }
+    .flow__body {
+      padding: 14px 16px 16px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .flow__body h3 {
+      margin: 0;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.06rem;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+    }
+    .flow__body p {
+      margin: 6px 0 0;
+      color: var(--brown-dark);
+      font-size: 0.89rem;
+    }
+    .flow__tag {
+      display: inline-block;
+      margin-block-start: 10px;
+      padding: 3px 10px 4px;
+      background: var(--bg-beige);
+      border-radius: var(--radius-pill);
+      color: var(--brown-heading);
+      font-size: 0.7rem;
+      font-weight: 500;
+    }
+    .flow__thumb {
+      margin-block-start: 12px;
+    }
+    .flow__thumb img {
+      aspect-ratio: 16 / 8;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    /* ---------- 動画 ---------- */
+    .movie { display: grid; gap: 22px; }
+    .movie__frame {
+      position: relative;
+      overflow: clip;
+      border-radius: var(--radius);
+      background: var(--brown-dark);
+    }
+    .movie__frame img {
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      filter: brightness(0.8);
+    }
+    .movie__play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+    }
+    .movie__play::before {
+      content: "";
+      width: 66px; height: 66px;
+      border-radius: var(--radius-pill);
+      background: var(--white-soft);
+      box-shadow: 0 14px 30px var(--shadow);
+    }
+    .movie__play::after {
+      content: "";
+      position: absolute;
+      border-block: 12px solid transparent;
+      border-inline-start: 19px solid var(--cta);
+      transform: translateX(3px);
+    }
+    .movie__time {
+      position: absolute;
+      right: 12px; bottom: 12px;
+      padding: 4px 10px 5px;
+      background: rgba(34, 24, 21, 0.66);
+      border-radius: var(--radius-pill);
+      color: var(--white);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+    }
+    .movie__caption p {
+      margin: 12px 0 0;
+      color: var(--brown-dark);
+      font-size: 0.94rem;
+    }
+    .movie__caption small {
+      display: block;
+      margin-block-start: 10px;
+      color: var(--mocha-brand);
+      font-size: 0.72rem;
+    }
+
+    /* ---------- 実績・作品 ---------- */
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-block-end: 30px;
+    }
+    .proof-card {
+      min-width: 0;
+      padding: 20px 14px 18px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      text-align: center;
+    }
+    .proof-card.-wide { grid-column: 1 / -1; }
+    .proof-card strong {
+      display: block;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.74rem;
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    .proof-card strong em {
+      font-style: normal;
+      color: var(--gold);
+      font-size: 0.62em;
+      margin-inline-end: 2px;
+    }
+    .proof-card strong::after {
+      content: "";
+      display: block;
+      width: 26px; height: 2px;
+      margin: 10px auto 0;
+      background: var(--gold);
+    }
+    .proof-card span {
+      display: block;
+      margin-block-start: 8px;
+      color: var(--brown-dark);
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+    .proof-card small {
+      display: block;
+      margin-block-start: 6px;
+      color: var(--mocha-brand);
+      font-size: 0.66rem;
+      line-height: 1.5;
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .work-grid img {
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 8px;
+      background: var(--bg-beige);
+    }
+    .work-grid img:first-child {
+      grid-column: 1 / -1;
+      aspect-ratio: 16 / 9;
+    }
+    .work-note {
+      margin: 14px 0 0;
+      color: var(--mocha-brand);
+      font-size: 0.72rem;
+      text-align: center;
+    }
+
+    /* ---------- お客さまの声 ---------- */
+    .voice-list { display: grid; gap: 16px; }
+    .voice-card {
+      position: relative;
+      padding: 24px 22px 20px;
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+    }
+    .voice-card::before {
+      content: "“";
+      position: absolute;
+      top: 6px; right: 16px;
+      color: var(--gold);
+      font-family: var(--font-accent);
+      font-size: 3rem;
+      line-height: 1;
+      opacity: 0.6;
+    }
+    .voice-card__theme {
+      display: inline-block;
+      margin-block-end: 12px;
+      padding: 4px 12px 5px;
+      background: var(--bg-beige);
+      border-radius: var(--radius-pill);
+      color: var(--brown-heading);
+      font-size: 0.74rem;
+      font-weight: 500;
+    }
+    .voice-card blockquote {
+      margin: 0;
+      color: var(--brown-heading);
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.85;
+    }
+    .voice-card cite {
+      display: block;
+      margin-block-start: 12px;
+      color: var(--mocha-brand);
+      font-size: 0.76rem;
+      font-style: normal;
+    }
+
+    /* ---------- FAQ ---------- */
+    .faq-list { display: grid; gap: 10px; }
+    .faq-list details {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: clip;
+    }
+    .faq-list summary {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr) 18px;
+      gap: 10px;
+      align-items: baseline;
+      padding: 17px 18px;
+      cursor: pointer;
+      color: var(--brown-heading);
+      font-weight: 500;
+      line-height: 1.6;
+      list-style: none;
+      word-break: keep-all;
+      overflow-wrap: anywhere;
+    }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::before {
+      content: "Q";
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+    .faq-list summary::after {
+      content: "+";
+      justify-self: end;
+      color: var(--gold);
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      line-height: 1;
+    }
+    .faq-list details[open] summary::after { content: "−"; }
+    .faq-answer {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 10px;
+      margin: 0;
+      padding: 0 18px 18px;
+      color: var(--brown-dark);
+      font-size: 0.92rem;
+    }
+    .faq-answer::before {
+      content: "A";
+      color: var(--mocha-brand);
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 600;
+      line-height: 1.7;
+    }
+
+    /* ---------- 予約フォーム ---------- */
+    .section.-mocha .section__title,
+    .section.-mocha .section__lead { color: var(--brown-heading); }
+
+    .form-panel {
+      padding: 26px 20px 28px;
+      background: var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 18px 40px rgba(34, 24, 21, 0.10);
+    }
+    .form-grid { display: grid; gap: 22px; }
+
+    .field { display: grid; gap: 9px; }
+    .field > label,
+    .group-label {
+      margin: 0;
+      color: var(--brown-heading);
+      font-weight: 500;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+    .badge-required, .badge-optional {
+      display: inline-block;
+      margin-inline-start: 8px;
+      padding: 2px 8px 3px;
+      border-radius: 4px;
+      font-size: 0.66rem;
+      font-weight: 500;
+      line-height: 1.3;
+      vertical-align: 2px;
+    }
+    .badge-required { background: var(--danger); color: var(--white); }
+    .badge-optional { background: var(--bg-sub); color: var(--brown-dark); }
+
+    input[type="text"], input[type="tel"], input[type="email"], input[type="date"],
+    select, textarea {
+      width: 100%;
+      min-width: 0;
+      padding: 14px 13px;
+      background: var(--white);
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+    textarea { min-height: 116px; resize: vertical; }
+    input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 1px;
+      border-color: var(--brown-heading);
+    }
+    ::placeholder { color: var(--mocha-brand); }
+
+    .store-grid { display: grid; gap: 10px; }
+    .store-option {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 15px;
+      background: var(--white);
+      border: 1px solid var(--line-strong);
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    .store-option input {
+      width: 19px; height: 19px;
+      margin: 0;
+      flex: none;
+      accent-color: var(--cta);
+    }
+    .store-option strong {
+      display: block;
+      color: var(--brown-heading);
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .store-option span {
+      display: block;
+      color: var(--mocha-brand);
+      font-size: 0.74rem;
+      line-height: 1.4;
+    }
+    .store-option:has(input:checked) {
+      border-color: var(--cta);
+      box-shadow: inset 0 0 0 1px var(--cta);
+      background: var(--bg-main);
+    }
+
+    .field-row { display: grid; gap: 14px; }
+
+    .choice-group {
+      display: grid;
+      gap: 12px;
+      padding: 16px;
+      background: var(--bg-main);
+      border-radius: 8px;
+    }
+    .choice {
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      gap: 10px;
+      align-items: start;
+      color: var(--brown-dark);
+      font-size: 0.89rem;
+      line-height: 1.7;
+      cursor: pointer;
+    }
+    .choice input {
+      width: 18px; height: 18px;
+      margin: 5px 0 0;
+      accent-color: var(--cta);
+    }
+    .choice u {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      text-decoration-color: var(--mocha-brand);
+    }
+
+    .form-note {
+      margin: 0;
+      color: var(--red-note);
+      font-size: 0.78rem;
+      line-height: 1.7;
+    }
+    .form-microcopy {
+      margin: 0;
+      color: var(--brown-dark);
+      font-size: 0.76rem;
+      text-align: center;
+    }
+
+    /* ---------- フッター ---------- */
+    .footer {
+      padding: 44px var(--pad) 120px;
+      background: var(--brown-heading);
+      color: var(--white);
+      text-align: center;
+    }
+    .footer__brand {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: 1.06rem;
+      letter-spacing: 0.18em;
+    }
+    .footer__line {
+      margin: 14px 0 0;
+      font-family: var(--font-accent);
+      font-size: 0.96rem;
+      letter-spacing: 0.12em;
+      opacity: 0.92;
+    }
+    .footer__stores {
+      margin: 18px 0 0;
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      opacity: 0.75;
+    }
+    .footer__mock {
+      margin: 18px 0 0;
+      font-size: 0.66rem;
+      opacity: 0.5;
+    }
+
+    /* ---------- 追従CTAバー ---------- */
+    .sticky-cta {
+      position: fixed;
+      inset: auto 0 0 0;
+      z-index: 50;
+      display: flex;
+      justify-content: center;
+      padding: 10px var(--pad) calc(10px + env(safe-area-inset-bottom));
+      background: var(--white-soft);
+      backdrop-filter: blur(8px);
+      border-block-start: 1px solid var(--line);
+      transform: translateY(110%);
+      transition: transform 260ms ease;
+    }
+    .sticky-cta.is-visible { transform: translateY(0); }
+    .sticky-cta__inner {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      width: min(100%, calc(var(--page-max) - var(--pad) * 2));
+    }
+    .sticky-cta__text {
+      display: none;
+      margin: 0;
+      color: var(--brown-heading);
+      font-size: 0.8rem;
+      font-weight: 500;
+      line-height: 1.45;
+      white-space: nowrap;
+    }
+    .sticky-cta .cta-button {
+      min-height: 52px;
+      padding-block: 13px;
+      font-size: 0.98rem;
+      box-shadow: 0 4px 0 var(--cta-deep), 0 12px 22px var(--cta-glow);
+    }
+
+    @media (min-width: 480px) {
+      .sticky-cta__text { display: block; }
+    }
+
+    /* ---------- PC（750px枠内の2カラム化など） ---------- */
+    @media (min-width: 700px) {
+      :root { --pad: 48px; }
+
+      body { padding-block: 32px; }
+      .lp { border-radius: 14px; overflow: clip; }
+
+      .section { padding-block: 96px; }
+      .section__title { font-size: 1.94rem; }
+
+      .hero { min-height: 700px; }
+      .hero__title { font-size: 2.9rem; }
+      .hero__cta .cta-button { width: min(100%, 400px); }
+      .hero__content { padding-block-end: 40px; }
+      .hero__ring-frame { width: 150px; }
+
+      .trust-strip__item strong { font-size: 1.42rem; }
+      .trust-strip__item span { font-size: 0.74rem; }
+
+      .booking-strip__copy { font-size: 1.5rem; }
+      .booking-strip .cta-button { width: min(100%, 400px); }
+
+      .about-grid {
+        grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+        align-items: center;
+      }
+
+      .reason-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reason-card:first-child { grid-column: 1 / -1; }
+      .reason-card:first-child img { aspect-ratio: 21 / 9; }
+
+      .flow-quote p { font-size: 1.9rem; }
+
+      .movie {
+        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+        align-items: center;
+      }
+
+      .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .proof-card.-wide { grid-column: auto; }
+
+      .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .work-grid img:first-child { grid-column: span 2; aspect-ratio: auto; }
+
+      .voice-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+      .form-panel { padding: 34px 32px 36px; }
+      .field-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .store-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .reservation .cta-button { width: min(100%, 420px); justify-self: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .cta-button, .sticky-cta { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="lp">
+
+    <!-- 1. ファーストビュー -->
+    <header class="hero" id="top">
+      <figure class="hero__photo">
+        <img src="assets/hero-couple.jpg" alt="明るい工房で、笑顔で指輪づくりをするカップル" fetchpriority="high">
+      </figure>
+      <div class="hero__bar">
+        <p class="brand">鎌倉彫金工房</p>
+      </div>
+      <p class="hero__vertical">ふたりで、つくる。</p>
+      <div class="hero__content">
+        <p class="hero__eyebrow">手作り結婚指輪・婚約指輪</p>
+        <h1 class="hero__title"><span>一生の思い出に残る、</span><span>笑顔あふれる一日を。</span></h1>
+        <p class="hero__copy">一本の棒状の金属から、ふたりの手で結婚指輪・婚約指輪をつくる。むずかしい工程は職人がそばで支えるから、初めてのおふたりでも、毎日つけたくなる仕上がりに。</p>
+        <div class="hero__cta">
+          <a class="cta-button" href="#reservation">今すぐ空席を確認する</a>
+          <p class="hero__note">ご入力は約1分。相談だけのご見学予約もできます。</p>
+        </div>
+        <figure class="hero__ring">
+          <figcaption>棒状の金属から、<br>ふたりの指輪へ。</figcaption>
+          <span class="hero__ring-frame">
+            <img src="assets/ring-floral.jpg" alt="花のそばに置かれた、ふたりで作った結婚指輪">
+          </span>
+        </figure>
+      </div>
+    </header>
+
+    <!-- FV直下の信頼要素 -->
+    <section class="trust-strip" aria-label="実績">
+      <div class="trust-strip__grid">
+        <div class="trust-strip__item">
+          <strong>約9,000本</strong>
+          <span>年間ブライダル<br>リング制作</span>
+        </div>
+        <div class="trust-strip__item">
+          <strong>15,720件</strong>
+          <span>作品・メディア<br>掲載実績</span>
+        </div>
+        <div class="trust-strip__item">
+          <strong>全4工房</strong>
+          <span>鎌倉・横浜元町<br>大阪・東京</span>
+        </div>
+      </div>
+      <p class="trust-strip__foot">※実績数値は公式サイト記載値（掲載件数は2021年6月時点）。</p>
+    </section>
+
+    <!-- 2. すぐ予約できるCTA -->
+    <section class="booking-strip">
+      <h2 class="booking-strip__copy">まずは、ふたりの記念日の<br>空きだけでも。</h2>
+      <ul class="booking-strip__chips">
+        <li>入力は約1分</li>
+        <li>見学だけの予約もOK</li>
+        <li>4つの工房から選べる</li>
+      </ul>
+      <a class="cta-button" href="#reservation">空席を確認してみる</a>
+      <p class="cta-note">空き状況のご確認だけでも、お気軽にどうぞ。</p>
+    </section>
+
+    <main>
+
+      <!-- 3. 手作り結婚指輪とは -->
+      <section class="section">
+        <div class="section__head">
+          <p class="section__label">ABOUT</p>
+          <h2 class="section__title"><span>「選ぶ」のではなく、</span><span>つくる時間ごと、</span><span>ふたりのものに。</span></h2>
+          <p class="section__lead">手作り結婚指輪は、デザイン決めから、火入れ・成形・磨きまでをふたりで体験する指輪づくり。できあがった指輪だけでなく、つくった一日そのものが、これからずっと残る思い出になります。</p>
+        </div>
+        <div class="about-grid">
+          <figure class="about-photo">
+            <img src="assets/craft-hands.jpg" alt="工具を使って指輪を仕上げていく手元">
+          </figure>
+          <dl class="comparison">
+            <div class="comparison__row">
+              <dt>既製品</dt>
+              <dd>完成した指輪から選ぶ。すぐに仕上がりを確かめられる。</dd>
+            </div>
+            <div class="comparison__row">
+              <dt>オーダーメイド</dt>
+              <dd>希望を伝えて、職人がかたちにする。細部までこだわれる。</dd>
+            </div>
+            <div class="comparison__row -feature">
+              <dt><span class="comparison__tag">鎌倉彫金工房</span>ふたりで手作り</dt>
+              <dd>デザインも、つくる時間も、ふたりのもの。指輪を見るたび、あの日の会話まで思い出せる。</dd>
+            </div>
+          </dl>
+        </div>
+        <p class="about-accent">指輪に、ふたりの一日が宿る。</p>
+      </section>
+
+      <!-- 4. 選ばれる理由 -->
+      <section class="section -sub">
+        <div class="section__head">
+          <p class="section__label">REASON</p>
+          <h2 class="section__title">鎌倉彫金工房が選ばれる、<br>5つの理由。</h2>
+        </div>
+        <div class="reason-list">
+          <article class="reason-card">
+            <img src="assets/ring-try.jpg" alt="完成した指輪を、うれしそうに指にはめる様子">
+            <div class="reason-card__body">
+              <span class="reason-card__num">REASON 01</span>
+              <h3>手作りならではの<wbr>楽しさと思い出</h3>
+              <p>火を入れ、叩いて、磨く。少し大変な工程があるからこそ、完成した瞬間のうれしさは、既製品では味わえないものになります。</p>
+            </div>
+          </article>
+          <article class="reason-card">
+            <img src="assets/workshop-room.jpg" alt="木の机と道具が整然と並ぶ、落ち着いた工房の内観">
+            <div class="reason-card__body">
+              <span class="reason-card__num">REASON 02</span>
+              <h3>落ち着いた、<wbr>おしゃれな工房</h3>
+              <p>木の温もりと道具の気配が心地よい空間。緊張せず、ふたりのペースで制作に向き合えます。</p>
+            </div>
+          </article>
+          <article class="reason-card">
+            <img src="assets/hero-couple.jpg" alt="工房で笑い合うカップル">
+            <div class="reason-card__body">
+              <span class="reason-card__num">REASON 03</span>
+              <h3>観光もたのしい、<wbr>4つの工房</h3>
+              <p>鎌倉、横浜元町、大阪中崎町、東京蔵前。制作の前後に街歩きまで楽しめば、一日まるごと記念日になります。</p>
+            </div>
+          </article>
+          <article class="reason-card">
+            <img src="assets/staff-support.jpg" alt="職人がそばに付き添い、制作をサポートする様子">
+            <div class="reason-card__body">
+              <span class="reason-card__num">REASON 04</span>
+              <h3>不器用でも、<wbr>職人サポートで美しく</h3>
+              <p>むずかしい工程は職人が見極めてフォロー。体験の楽しさと、既製品のような完成度を両立します。</p>
+            </div>
+          </article>
+          <article class="reason-card">
+            <img src="assets/sample-rings.jpg" alt="木製ケースに並んだ指輪のサンプル">
+            <div class="reason-card__body">
+              <span class="reason-card__num">REASON 05</span>
+              <h3>心地よい接客と、<wbr>職人のおもてなし</h3>
+              <p>説明はていねいに、距離感はほどよく。ふたりが自然体で過ごせる時間づくりも、私たちの仕事です。</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 5. 制作の流れ -->
+      <section class="section">
+        <div class="section__head">
+          <p class="section__label">FLOW</p>
+          <h2 class="section__title">制作の流れ</h2>
+          <p class="section__lead">棒状の金属が、ふたりの手で少しずつ指輪になっていきます。</p>
+        </div>
+
+        <div class="flow-quote">
+          <p>ちょっと大変。<br>それが魅力。</p>
+          <small>手をかけた時間のぶんだけ、忘れられない一日に。</small>
+        </div>
+
+        <div class="flow">
+          <article class="flow__step">
+            <span class="flow__num">01</span>
+            <div class="flow__body">
+              <h3>予約</h3>
+              <p>店舗・コース・希望日時を選んで空席を確認。迷っている段階なら、見学だけの予約もできます。</p>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">02</span>
+            <div class="flow__body">
+              <h3>デザイン決定</h3>
+              <p>サンプルを手に取りながら、素材・幅・かたち・仕上げを職人と相談して決めます。</p>
+              <figure class="flow__thumb"><img src="assets/workbench-rings.jpg" alt="机に並んだ指輪サンプルと道具"></figure>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">03</span>
+            <div class="flow__body">
+              <h3>制作開始</h3>
+              <p>棒状の金属を受け取ったら、ふたりの指輪づくりがスタートです。</p>
+              <figure class="flow__thumb"><img src="assets/craft-hands.jpg" alt="金属の棒を加工していく手元"></figure>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">04</span>
+            <div class="flow__body">
+              <h3>焼きなまし</h3>
+              <p>金属に火を入れて、やわらかく加工しやすい状態に整えます。</p>
+              <span class="flow__tag">職人がそばでサポート</span>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">05</span>
+            <div class="flow__body">
+              <h3>溶接</h3>
+              <p>端と端をつないで、輪のかたちに。炎を使う、いちばんドキドキする工程です。</p>
+              <span class="flow__tag">職人がそばでサポート</span>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">06</span>
+            <div class="flow__body">
+              <h3>丸くする</h3>
+              <p>芯金に通して木槌で叩き、少しずつきれいな円へ。工房に響く音も思い出になります。</p>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">07</span>
+            <div class="flow__body">
+              <h3>仕上げ</h3>
+              <p>磨きと質感、刻印を整えて、指になじむ表情にしていきます。</p>
+            </div>
+          </article>
+          <article class="flow__step">
+            <span class="flow__num">08</span>
+            <div class="flow__body">
+              <h3>完成</h3>
+              <p>つくった時間ごと、ふたりの指輪を持ち帰ります。</p>
+              <figure class="flow__thumb"><img src="assets/ring-try.jpg" alt="完成した指輪を指にはめる瞬間"></figure>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 6. 動画・工程紹介 -->
+      <section class="section -white">
+        <div class="movie">
+          <figure class="movie__frame">
+            <img src="assets/workbench-rings.jpg" alt="制作前の作業机。工具と指輪サンプルが並ぶ">
+            <span class="movie__play" aria-hidden="true"></span>
+            <span class="movie__time">01:30</span>
+          </figure>
+          <div class="movie__caption">
+            <p class="section__label">MOVIE</p>
+            <h2 class="section__title">当日の空気感は、<br>動画でひと足先に。</h2>
+            <p>炎の音、金属の手ざわり、職人との距離感。約90秒の映像で当日の流れをイメージできれば、「不器用だけど大丈夫かな」という不安は、きっと小さくなります。</p>
+            <small>※動画枠（公開時に実映像を設定します）</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. 実績・作品例 -->
+      <section class="section -sub">
+        <div class="section__head">
+          <p class="section__label">WORKS</p>
+          <h2 class="section__title"><span>多くのふたりの指輪が、</span><span>ここから生まれています。</span></h2>
+        </div>
+        <div class="proof-grid">
+          <div class="proof-card">
+            <strong><em>約</em>9,000本</strong>
+            <span>年間ブライダル<br>リング制作</span>
+          </div>
+          <div class="proof-card">
+            <strong>15,720件</strong>
+            <span>作品・メディア<br>掲載実績</span>
+            <small>※2021年6月時点の記載</small>
+          </div>
+          <div class="proof-card -wide">
+            <strong><em>★</em>4.9</strong>
+            <span>Googleクチコミ平均（想定枠）</span>
+            <small>※公開前に最新の確定値へ差し替え</small>
+          </div>
+        </div>
+        <div class="work-grid" aria-label="作品例">
+          <img src="assets/ring-floral.jpg" alt="作品例：花とともに撮影した結婚指輪">
+          <img src="assets/ring-try.jpg" alt="作品例：指につけたゴールドのリング">
+          <img src="assets/sample-rings.jpg" alt="作品例：木製ケースに並ぶリング">
+          <img src="assets/craft-hands.jpg" alt="作品例：制作途中のリングを整える様子">
+          <img src="assets/workbench-rings.jpg" alt="作品例：作業机に並ぶリングサンプル">
+        </div>
+        <p class="work-note">制作例：プラチナ／ゴールド、鏡面・つや消し・槌目仕上げ など</p>
+      </section>
+
+      <!-- 8. お客さまの声 -->
+      <section class="section">
+        <div class="section__head">
+          <p class="section__label">VOICE</p>
+          <h2 class="section__title">先輩カップルの声</h2>
+          <p class="section__lead">予約前に感じていた不安も、<br>終わってみれば、ぜんぶ思い出。</p>
+        </div>
+        <div class="voice-list">
+          <article class="voice-card">
+            <span class="voice-card__theme">一緒に作った時間が思い出に</span>
+            <blockquote>指輪を見るたびに作った日のことを全部思い出せるんですよ</blockquote>
+            <cite>お客様インタビュー vol.14</cite>
+          </article>
+          <article class="voice-card">
+            <span class="voice-card__theme">初めてでも楽しい</span>
+            <blockquote>最初は、えっ……と思いました。作れるわけがないって</blockquote>
+            <cite>お客様インタビュー vol.15</cite>
+          </article>
+          <article class="voice-card">
+            <span class="voice-card__theme">自慢できる完成度</span>
+            <blockquote>Instagramにアップしたんですが、みんなもビックリしていましたね。</blockquote>
+            <cite>お客様インタビュー vol.07</cite>
+          </article>
+        </div>
+      </section>
+
+      <!-- 9. FAQ -->
+      <section class="section -white">
+        <div class="section__head">
+          <p class="section__label">FAQ</p>
+          <h2 class="section__title">予約直前の小さな不安に、<br>お答えします。</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>不器用でも大丈夫ですか？</summary>
+            <p class="faq-answer">はい、大丈夫です。職人が工程ごとに手元を確認し、むずかしい部分はていねいにサポートします。作る楽しさは残しつつ、仕上がりもきれいに整えていきます。</p>
+          </details>
+          <details>
+            <summary>当日持ち帰れますか？</summary>
+            <p class="faq-answer">コースや制作内容により異なります。当日お持ち帰りいただける場合と、仕上げのためにお預かりする場合がありますので、ご希望の方は予約時にご相談ください。</p>
+          </details>
+          <details>
+            <summary>アフターケアはありますか？</summary>
+            <p class="faq-answer">サイズ調整は基本無料です。工房へのお持ち込みのほか、郵送でもご相談いただけます（目安として2〜3週間ほどお預かりする場合があります）。</p>
+          </details>
+          <details>
+            <summary>指のサイズが<wbr>分からなくても<wbr>大丈夫ですか？</summary>
+            <p class="faq-answer">大丈夫です。当日、工房で正確に計測してから制作に入りますので、事前にサイズを調べておく必要はありません。</p>
+          </details>
+          <details>
+            <summary>デザインは<wbr>その場で<wbr>決められますか？</summary>
+            <p class="faq-answer">サンプルを見ながら、素材・幅・かたち・仕上げをその場で選べます。迷ってしまっても、職人が日常使いしやすい選び方を一緒に整理します。</p>
+          </details>
+        </div>
+      </section>
+
+      <!-- 10. 予約フォーム -->
+      <section class="section -mocha reservation" id="reservation">
+        <div class="section__head">
+          <p class="section__label">RESERVATION</p>
+          <h2 class="section__title">空席確認・ご予約</h2>
+          <p class="section__lead">ご入力は約1分。まずは店舗と希望日時をお選びください。制作内容のご相談や不安なことは、要望欄にお書きいただけます。</p>
+        </div>
+        <form class="form-panel" action="#" method="post">
+          <div class="form-grid">
+
+            <fieldset class="field" style="border:0;padding:0;margin:0;">
+              <legend class="group-label" style="padding:0;margin-bottom:9px;">店舗選択<span class="badge-required">必須</span></legend>
+              <div class="store-grid">
+                <label class="store-option">
+                  <input type="radio" name="shop" value="鎌倉本店" required>
+                  <span><strong>鎌倉本店</strong><span>神奈川・鎌倉（御成通り）</span></span>
+                </label>
+                <label class="store-option">
+                  <input type="radio" name="shop" value="横浜元町店">
+                  <span><strong>横浜元町店</strong><span>神奈川・横浜元町</span></span>
+                </label>
+                <label class="store-option">
+                  <input type="radio" name="shop" value="大阪中崎町店">
+                  <span><strong>大阪中崎町店</strong><span>大阪・中崎町</span></span>
+                </label>
+                <label class="store-option">
+                  <input type="radio" name="shop" value="東京蔵前店">
+                  <span><strong>東京蔵前店</strong><span>東京・蔵前</span></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="course">コース選択<span class="badge-required">必須</span></label>
+              <select id="course" name="course" required>
+                <option value="">コースを選択してください</option>
+                <option>結婚指輪手作りコース</option>
+                <option>婚約指輪手作りコース</option>
+                <option>結婚指輪・婚約指輪手作りコース（3本制作）</option>
+                <option>ご見学・デザイン相談</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="date">希望日<span class="badge-required">必須</span></label>
+                <input id="date" name="date" type="date" required>
+              </div>
+              <div class="field">
+                <label for="time">希望時間<span class="badge-required">必須</span></label>
+                <select id="time" name="time" required>
+                  <option value="">時間を選択してください</option>
+                  <option>9:30</option>
+                  <option>10:00</option>
+                  <option>14:30</option>
+                  <option>15:00</option>
+                  <option>上記以外の時間を相談したい</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">お名前<span class="badge-required">必須</span></label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="例：鎌倉 花子" required>
+              </div>
+              <div class="field">
+                <label for="kana">ふりがな<span class="badge-required">必須</span></label>
+                <input id="kana" name="kana" type="text" placeholder="例：かまくら はなこ" required>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="tel">電話番号<span class="badge-required">必須</span></label>
+                <input id="tel" name="tel" type="tel" autocomplete="tel" inputmode="tel" placeholder="例：090-1234-5678" required>
+              </div>
+              <div class="field">
+                <label for="email">メールアドレス<span class="badge-required">必須</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="例：hanako@example.com" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="request">ご要望・相談したいこと<span class="badge-optional">任意</span></label>
+              <textarea id="request" name="request" placeholder="例：不器用で少し不安です。当日持ち帰りができるか相談したいです。"></textarea>
+            </div>
+
+            <div class="choice-group">
+              <p class="group-label">確認事項<span class="badge-required">必須</span></p>
+              <label class="choice">
+                <input type="checkbox" name="confirm_takehome" required>
+                <span>制作内容により、当日お持ち帰りまたはお預かりとなる場合があることを確認しました。</span>
+              </label>
+              <label class="choice">
+                <input type="checkbox" name="confirm_privacy" required>
+                <span><u>個人情報の取り扱い</u>に同意します。</span>
+              </label>
+            </div>
+
+            <p class="form-note">※送信後すぐに予約確定とはなりません。空き状況を確認のうえ、担当者よりご連絡いたします。</p>
+
+            <button class="cta-button" type="submit">確認画面へ進む</button>
+            <p class="form-microcopy">入力内容は次の画面でご確認いただけます。</p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p class="footer__brand">鎌倉彫金工房</p>
+      <p class="footer__line">ふたりでつくった時間ごと、<br>これからの毎日へ。</p>
+      <p class="footer__stores">鎌倉本店｜横浜元町店｜大阪中崎町店｜東京蔵前店</p>
+      <p class="footer__mock">本ページはLPデザインモックです（写真・実績数値は確認用）。</p>
+    </footer>
+  </div>
+
+  <!-- 追従CTA（FV通過後に表示・フォーム表示中は隠す） -->
+  <div class="sticky-cta" id="stickyCta">
+    <div class="sticky-cta__inner">
+      <p class="sticky-cta__text">手作り結婚指輪・婚約指輪<br>ご入力は約1分</p>
+      <a class="cta-button" href="#reservation">空席を確認する</a>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var bar = document.getElementById('stickyCta');
+      var hero = document.querySelector('.hero');
+      var reservation = document.getElementById('reservation');
+      if (!bar || !hero || !reservation || !('IntersectionObserver' in window)) return;
+
+      var heroVisible = true;
+      var formVisible = false;
+
+      function update() {
+        bar.classList.toggle('is-visible', !heroVisible && !formVisible);
+      }
+
+      new IntersectionObserver(function (entries) {
+        heroVisible = entries[0].isIntersecting;
+        update();
+      }, { threshold: 0.12 }).observe(hero);
+
+      new IntersectionObserver(function (entries) {
+        formVisible = entries[0].isIntersecting;
+        update();
+      }, { threshold: 0.05 }).observe(reservation);
+
+      // デザインモックのため送信は無効化
+      var form = document.querySelector('.form-panel');
+      if (form) form.addEventListener('submit', function (e) { e.preventDefault(); });
+    })();
+  </script>
+</body>
+</html>
