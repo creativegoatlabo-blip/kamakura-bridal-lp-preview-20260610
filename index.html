@@ -592,66 +592,61 @@
       border-radius: 6px;
     }
 
-    /* ---------- 動画 ---------- */
-    .movie { display: grid; gap: 22px; }
-    .movie__frame {
+    /* ---------- 動画（全面背景セクション） ---------- */
+    .section.-cinema {
       position: relative;
-      overflow: clip;
-      border-radius: var(--radius);
+      isolation: isolate;
+      overflow: hidden;
+      display: flex;
+      align-items: flex-end;
+      min-height: 74svh;
+      padding: 80px var(--pad) 48px;
       background: var(--brown-dark);
+      color: var(--white);
     }
-    .movie__frame img,
-    .movie__frame video {
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-    }
-    .movie__frame:not(.is-playing) video { filter: brightness(0.82); }
-    .movie__play {
+    .cinema__video {
       position: absolute;
       inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 40% 30%;
+      filter: brightness(0.92);
+    }
+    .section.-cinema::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(
+        180deg,
+        rgba(34, 24, 21, 0.28) 0%,
+        rgba(34, 24, 21, 0.10) 38%,
+        rgba(34, 24, 21, 0.52) 70%,
+        rgba(34, 24, 21, 0.80) 100%
+      );
+    }
+    .cinema__inner {
       display: grid;
-      place-items: center;
-      margin: 0;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      cursor: pointer;
+      gap: 12px;
+      max-width: 32em;
     }
-    .movie__play:focus-visible { outline: 3px solid var(--gold); outline-offset: -6px; }
-    .movie__play.is-hidden { display: none; }
-    .movie__play::before {
-      content: "";
-      width: 66px; height: 66px;
-      border-radius: var(--radius-pill);
-      background: var(--white-soft);
-      box-shadow: 0 14px 30px var(--shadow);
-    }
-    .movie__play::after {
-      content: "";
-      position: absolute;
-      border-block: 12px solid transparent;
-      border-inline-start: 19px solid var(--cta);
-      transform: translateX(3px);
-    }
-    .movie__time {
-      position: absolute;
-      right: 12px; bottom: 12px;
-      padding: 4px 10px 5px;
-      background: rgba(34, 24, 21, 0.66);
-      border-radius: var(--radius-pill);
+    .section.-cinema .section__label { color: var(--white-soft); }
+    .section.-cinema .section__label::before { background: var(--gold); }
+    .section.-cinema .section__title {
       color: var(--white);
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
+      text-shadow: 0 2px 16px rgba(34, 24, 21, 0.5);
     }
-    .movie__caption p {
-      margin: 12px 0 0;
-      color: var(--brown-dark);
-      font-size: 0.94rem;
+    .cinema__copy {
+      margin: 0;
+      font-size: 0.95rem;
+      font-weight: 500;
+      line-height: 1.9;
+      text-shadow: 0 1px 10px rgba(34, 24, 21, 0.55);
     }
-    .movie__caption small {
-      display: block;
-      margin-block-start: 10px;
-      color: var(--mocha-brand);
+    .cinema__note {
+      color: var(--white-soft);
       font-size: 0.72rem;
     }
 
@@ -1069,10 +1064,7 @@
 
       .flow-quote p { font-size: 1.9rem; }
 
-      .movie {
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-        align-items: center;
-      }
+      .section.-cinema { min-height: 600px; }
 
       .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .proof-card.-wide { grid-column: auto; }
@@ -1315,22 +1307,14 @@
         </div>
       </section>
 
-      <!-- 6. 動画・工程紹介 -->
-      <section class="section -white">
-        <div class="movie">
-          <figure class="movie__frame" id="brandMovieFrame">
-            <video id="brandMovie" preload="metadata" playsinline poster="assets/movie-poster.jpg">
-              <source src="assets/movie-brand.mp4" type="video/mp4">
-            </video>
-            <button class="movie__play" id="brandMoviePlay" type="button" aria-label="リール動画を再生する"></button>
-            <span class="movie__time">00:16</span>
-          </figure>
-          <div class="movie__caption">
-            <p class="section__label">MOVIE</p>
-            <h2 class="section__title">当日の空気感は、<br>動画でひと足先に。</h2>
-            <p>工房の光、金属の音、スタッフの笑顔。SNSで配信中のリール動画から、当日の空気感をひと足先にどうぞ。「不器用だけど大丈夫かな」という不安は、きっと小さくなります。</p>
-            <small>※公式Instagramリール（2026年5月投稿）より。再生すると音が出ます。</small>
-          </div>
+      <!-- 6. 動画・店内の空気感（全面背景動画） -->
+      <section class="section -cinema">
+        <video class="cinema__video" muted loop playsinline preload="none" poster="assets/movie-bg-poster.jpg" data-video-src="assets/movie-bg.mp4" aria-label="ランプの灯る店内で、カウンター越しに微笑むスタッフ"></video>
+        <div class="cinema__inner">
+          <p class="section__label">MOVIE</p>
+          <h2 class="section__title">当日の空気感は、<br>動画でひと足先に。</h2>
+          <p class="cinema__copy">工房の光、金属の音、スタッフの笑顔。実際の店内の空気を、ひと足先にどうぞ。「不器用だけど大丈夫かな」という不安は、きっと小さくなります。</p>
+          <small class="cinema__note">※公式Instagramリールの実映像を使用しています。</small>
         </div>
       </section>
 
@@ -1591,42 +1575,35 @@
       var lazyVideos = [].slice.call(document.querySelectorAll('video[data-video-src]'));
       lazyVideos.forEach(function (v) { v.muted = true; });
       if (lazyVideos.length) {
+        var playVideo = function (v) {
+          if (reduceMotion) return;
+          var p = v.play();
+          if (p && p.catch) p.catch(function () {});
+        };
         var videoObserver = new IntersectionObserver(function (entries) {
           entries.forEach(function (entry) {
             var v = entry.target;
             if (entry.isIntersecting) {
+              v.setAttribute('data-inview', '1');
               if (!v.getAttribute('src')) v.src = v.getAttribute('data-video-src');
-              if (!reduceMotion) {
-                var p = v.play();
-                if (p && p.catch) p.catch(function () {});
-              }
-            } else if (v.getAttribute('src')) {
-              v.pause();
+              playVideo(v);
+            } else {
+              v.removeAttribute('data-inview');
+              if (v.getAttribute('src')) v.pause();
             }
           });
         }, { rootMargin: '240px 0px' });
         lazyVideos.forEach(function (v) { videoObserver.observe(v); });
+
+        // タブ復帰時、画面内の動画を再開
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState !== 'visible') return;
+          lazyVideos.forEach(function (v) {
+            if (v.getAttribute('data-inview') && v.getAttribute('src')) playVideo(v);
+          });
+        });
       }
 
-      // ブランドムービー: 再生ボタンで音声付き再生
-      var brandMovie = document.getElementById('brandMovie');
-      var brandPlay = document.getElementById('brandMoviePlay');
-      var brandFrame = document.getElementById('brandMovieFrame');
-      if (brandMovie && brandPlay && brandFrame) {
-        brandPlay.addEventListener('click', function () {
-          brandPlay.classList.add('is-hidden');
-          brandFrame.classList.add('is-playing');
-          brandMovie.setAttribute('controls', '');
-          var p = brandMovie.play();
-          if (p && p.catch) p.catch(function () {});
-        });
-        brandMovie.addEventListener('ended', function () {
-          brandPlay.classList.remove('is-hidden');
-          brandFrame.classList.remove('is-playing');
-          brandMovie.removeAttribute('controls');
-          brandMovie.currentTime = 0;
-        });
-      }
     })();
   </script>
 </body>
