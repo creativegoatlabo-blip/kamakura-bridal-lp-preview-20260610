@@ -67,6 +67,7 @@
     }
 
     img { display: block; width: 100%; height: auto; }
+    video { display: block; width: 100%; height: auto; }
     figure { margin: 0; }
     a { color: inherit; text-decoration: none; }
     button, input, select, textarea { font: inherit; }
@@ -179,10 +180,12 @@
       background: var(--brown-dark);
     }
     .hero__photo { position: absolute; inset: 0; z-index: -2; }
-    .hero__photo img {
+    .hero__photo img,
+    .hero__photo video {
       height: 100%;
       object-fit: cover;
-      object-position: 58% 32%;
+      object-position: center 35%;
+      filter: brightness(0.86);
     }
     /* 写真の可読性スクリム（下部のみ暗く） */
     .hero::after {
@@ -458,7 +461,8 @@
       border-radius: var(--radius);
       overflow: clip;
     }
-    .reason-card img {
+    .reason-card img,
+    .reason-card video {
       aspect-ratio: 16 / 10;
       object-fit: cover;
     }
@@ -576,7 +580,8 @@
     .flow__thumb {
       margin-block-start: 12px;
     }
-    .flow__thumb img {
+    .flow__thumb img,
+    .flow__thumb video {
       aspect-ratio: 16 / 8;
       object-fit: cover;
       border-radius: 6px;
@@ -590,17 +595,25 @@
       border-radius: var(--radius);
       background: var(--brown-dark);
     }
-    .movie__frame img {
+    .movie__frame img,
+    .movie__frame video {
       aspect-ratio: 16 / 9;
       object-fit: cover;
-      filter: brightness(0.8);
     }
+    .movie__frame:not(.is-playing) video { filter: brightness(0.82); }
     .movie__play {
       position: absolute;
       inset: 0;
       display: grid;
       place-items: center;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
     }
+    .movie__play:focus-visible { outline: 3px solid var(--gold); outline-offset: -6px; }
+    .movie__play.is-hidden { display: none; }
     .movie__play::before {
       content: "";
       width: 66px; height: 66px;
@@ -1082,7 +1095,9 @@
     <!-- 1. ファーストビュー -->
     <header class="hero" id="top">
       <figure class="hero__photo">
-        <img src="assets/hero-couple.jpg" alt="明るい工房で、笑顔で指輪づくりをするカップル" fetchpriority="high">
+        <video class="hero__video" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-label="職人が金属の棒に槌目模様を打ち込んでいく制作風景">
+          <source src="assets/hero-loop.mp4" type="video/mp4">
+        </video>
       </figure>
       <div class="hero__bar">
         <p class="brand">鎌倉彫金工房</p>
@@ -1175,7 +1190,7 @@
         </div>
         <div class="reason-list">
           <article class="reason-card">
-            <img src="assets/ring-try.jpg" alt="完成した指輪を、うれしそうに指にはめる様子">
+            <video muted loop playsinline preload="none" poster="assets/r01-poster.jpg" data-video-src="assets/r01-loop.mp4" aria-label="工房で笑い合うおふたり"></video>
             <div class="reason-card__body">
               <span class="reason-card__num">REASON 01</span>
               <h3>手作りならではの<wbr>楽しさと思い出</h3>
@@ -1183,7 +1198,7 @@
             </div>
           </article>
           <article class="reason-card">
-            <img src="assets/workshop-room.jpg" alt="木の机と道具が整然と並ぶ、落ち着いた工房の内観">
+            <video muted loop playsinline preload="none" poster="assets/r02-poster.jpg" data-video-src="assets/r02-loop.mp4" aria-label="緑と自然光のある落ち着いた工房の空間"></video>
             <div class="reason-card__body">
               <span class="reason-card__num">REASON 02</span>
               <h3>落ち着いた、<wbr>おしゃれな工房</h3>
@@ -1207,7 +1222,7 @@
             </div>
           </article>
           <article class="reason-card">
-            <img src="assets/sample-rings.jpg" alt="木製ケースに並んだ指輪のサンプル">
+            <video muted loop playsinline preload="none" poster="assets/r05-poster.jpg" data-video-src="assets/r05-loop.mp4" aria-label="カウンターで笑顔で接客するスタッフ"></video>
             <div class="reason-card__body">
               <span class="reason-card__num">REASON 05</span>
               <h3>心地よい接客と、<wbr>職人のおもてなし</h3>
@@ -1243,7 +1258,7 @@
             <div class="flow__body">
               <h3>デザイン決定</h3>
               <p>サンプルを手に取りながら、素材・幅・かたち・仕上げを職人と相談して決めます。</p>
-              <figure class="flow__thumb"><img src="assets/workbench-rings.jpg" alt="机に並んだ指輪サンプルと道具"></figure>
+              <figure class="flow__thumb"><video muted loop playsinline preload="none" poster="assets/flow02-poster.jpg" data-video-src="assets/flow02-loop.mp4" aria-label="ダイヤモンドの婚約指輪サンプルのクローズアップ"></video></figure>
             </div>
           </article>
           <article class="flow__step">
@@ -1298,16 +1313,18 @@
       <!-- 6. 動画・工程紹介 -->
       <section class="section -white">
         <div class="movie">
-          <figure class="movie__frame">
-            <img src="assets/workbench-rings.jpg" alt="制作前の作業机。工具と指輪サンプルが並ぶ">
-            <span class="movie__play" aria-hidden="true"></span>
-            <span class="movie__time">01:30</span>
+          <figure class="movie__frame" id="brandMovieFrame">
+            <video id="brandMovie" preload="metadata" playsinline poster="assets/movie-poster.jpg">
+              <source src="assets/movie-brand.mp4" type="video/mp4">
+            </video>
+            <button class="movie__play" id="brandMoviePlay" type="button" aria-label="リール動画を再生する"></button>
+            <span class="movie__time">00:16</span>
           </figure>
           <div class="movie__caption">
             <p class="section__label">MOVIE</p>
             <h2 class="section__title">当日の空気感は、<br>動画でひと足先に。</h2>
-            <p>炎の音、金属の手ざわり、職人との距離感。約90秒の映像で当日の流れをイメージできれば、「不器用だけど大丈夫かな」という不安は、きっと小さくなります。</p>
-            <small>※動画枠（公開時に実映像を設定します）</small>
+            <p>工房の光、金属の音、スタッフの笑顔。SNSで配信中のリール動画から、当日の空気感をひと足先にどうぞ。「不器用だけど大丈夫かな」という不安は、きっと小さくなります。</p>
+            <small>※公式Instagramリール（2026年5月投稿）より。再生すると音が出ます。</small>
           </div>
         </div>
       </section>
@@ -1513,7 +1530,7 @@
       <p class="footer__brand">鎌倉彫金工房</p>
       <p class="footer__line">ふたりでつくった時間ごと、<br>これからの毎日へ。</p>
       <p class="footer__stores">鎌倉本店｜横浜元町店｜大阪中崎町店｜東京蔵前店</p>
-      <p class="footer__mock">本ページはLPデザインモックです（写真・実績数値は確認用）。</p>
+      <p class="footer__mock">本ページはLPデザインモックです（写真・動画・実績数値は確認用）。</p>
     </footer>
   </div>
 
@@ -1552,6 +1569,59 @@
       // デザインモックのため送信は無効化
       var form = document.querySelector('.form-panel');
       if (form) form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // FV背景動画（省電力設定ではポスター表示のまま）
+      var heroVideo = document.querySelector('.hero__video');
+      if (heroVideo) {
+        heroVideo.muted = true;
+        if (reduceMotion) {
+          heroVideo.removeAttribute('autoplay');
+          heroVideo.pause();
+        }
+      }
+
+      // カード動画の遅延読み込み: 画面に近づいたら読み込んで再生、離れたら停止
+      var lazyVideos = [].slice.call(document.querySelectorAll('video[data-video-src]'));
+      lazyVideos.forEach(function (v) { v.muted = true; });
+      if (lazyVideos.length) {
+        var videoObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            var v = entry.target;
+            if (entry.isIntersecting) {
+              if (!v.getAttribute('src')) v.src = v.getAttribute('data-video-src');
+              if (!reduceMotion) {
+                var p = v.play();
+                if (p && p.catch) p.catch(function () {});
+              }
+            } else if (v.getAttribute('src')) {
+              v.pause();
+            }
+          });
+        }, { rootMargin: '240px 0px' });
+        lazyVideos.forEach(function (v) { videoObserver.observe(v); });
+      }
+
+      // ブランドムービー: 再生ボタンで音声付き再生
+      var brandMovie = document.getElementById('brandMovie');
+      var brandPlay = document.getElementById('brandMoviePlay');
+      var brandFrame = document.getElementById('brandMovieFrame');
+      if (brandMovie && brandPlay && brandFrame) {
+        brandPlay.addEventListener('click', function () {
+          brandPlay.classList.add('is-hidden');
+          brandFrame.classList.add('is-playing');
+          brandMovie.setAttribute('controls', '');
+          var p = brandMovie.play();
+          if (p && p.catch) p.catch(function () {});
+        });
+        brandMovie.addEventListener('ended', function () {
+          brandPlay.classList.remove('is-hidden');
+          brandFrame.classList.remove('is-playing');
+          brandMovie.removeAttribute('controls');
+          brandMovie.currentTime = 0;
+        });
+      }
     })();
   </script>
 </body>
