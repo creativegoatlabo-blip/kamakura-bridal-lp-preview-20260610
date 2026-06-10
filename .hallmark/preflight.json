@@ -1,0 +1,17 @@
+{
+  "scanned_at": "2026-06-11T08:10:00+09:00",
+  "framework": "vanilla-html",
+  "font_stack": {
+    "body": "Noto Sans JP",
+    "heading": "Noto Serif JP",
+    "accent": "Hina Mincho"
+  },
+  "palette": "brief-specified-brand-colors-in-index-root",
+  "motion": "native-video-only",
+  "spacing": "custom-css-properties",
+  "preserve": [
+    "brief-specified colors",
+    "brief-specified Google Fonts",
+    "smartphone-first 750px max-width"
+  ]
+}

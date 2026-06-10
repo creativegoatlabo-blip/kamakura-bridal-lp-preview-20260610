@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Hina+Mincho&family=Noto+Sans+JP:wght@400;500&family=Noto+Serif+JP:wght@500;600&display=swap" rel="stylesheet">
   <style>
+    /* Hallmark · pre-emit critique: P5 H5 E4 S5 R5 V4 */
     /* ============================================================
        鎌倉彫金工房 手作り結婚指輪・婚約指輪 LP デザインモック v2
        2026-06-10 / スマホファースト（max 750px）
@@ -42,7 +43,7 @@
       --font-accent: "Hina Mincho", serif;
 
       --pad: 24px;
-      --radius: 10px;
+      --radius: 8px;
       --radius-pill: 999px;
       --page-max: 750px;
     }
@@ -52,6 +53,7 @@
     html {
       scroll-behavior: smooth;
       scroll-padding-top: 16px;
+      overflow-x: clip;
     }
 
     body {
@@ -93,8 +95,8 @@
       align-items: center;
       gap: 10px;
       margin: 0;
-      color: var(--mocha-brand);
-      font-size: 0.72rem;
+      color: var(--brown-dark);
+      font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.24em;
     }
@@ -108,7 +110,7 @@
 
     .section__title {
       margin: 0;
-      color: var(--brown-heading);
+      color: var(--white);
       font-family: var(--font-heading);
       font-size: 1.58rem;
       font-weight: 500;
@@ -138,8 +140,8 @@
       border-radius: var(--radius-pill);
       background: var(--cta);
       color: var(--white);
-      font-size: 1.04rem;
-      font-weight: 500;
+      font-size: 1.17rem;
+      font-weight: 700;
       letter-spacing: 0.04em;
       line-height: 1;
       white-space: nowrap;
@@ -176,7 +178,7 @@
       min-height: 94svh;
       isolation: isolate;
       overflow: hidden;
-      color: var(--white);
+      color: var(--brown-heading);
       background: var(--brown-dark);
     }
     .hero__photo { position: absolute; inset: 0; z-index: -2; }
@@ -261,7 +263,7 @@
     .hero__title {
       margin: 0;
       font-family: var(--font-heading);
-      font-size: clamp(1.74rem, 7.6vw, 2.6rem);
+      font-size: 2rem;
       font-weight: 500;
       letter-spacing: 0.05em;
       line-height: 1.42;
@@ -352,8 +354,8 @@
     }
     .trust-strip__foot {
       margin: 12px 0 0;
-      color: var(--mocha-brand);
-      font-size: 0.66rem;
+      color: var(--brown-dark);
+      font-size: 0.72rem;
       line-height: 1.5;
       text-align: center;
     }
@@ -436,7 +438,7 @@
       padding: 2px 9px 3px;
       background: var(--gold);
       border-radius: var(--radius-pill);
-      color: var(--white);
+      color: var(--brown-heading);
       font-size: 0.66rem;
       font-weight: 500;
       letter-spacing: 0.08em;
@@ -471,11 +473,12 @@
       aspect-ratio: 16 / 10;
       object-fit: cover;
     }
+    .reason-card:nth-child(4) img { object-position: center 30%; }
     .reason-card__body { padding: 20px 20px 24px; }
     .reason-card__num {
       display: block;
       margin-block-end: 6px;
-      color: var(--gold);
+      color: var(--brown-heading);
       font-family: var(--font-heading);
       font-size: 0.92rem;
       font-weight: 600;
@@ -611,7 +614,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 40% 30%;
+      object-position: 52% 30%;
       filter: brightness(0.92);
     }
     .section.-cinema::after {
@@ -697,51 +700,57 @@
     .proof-card small {
       display: block;
       margin-block-start: 6px;
-      color: var(--mocha-brand);
-      font-size: 0.66rem;
+      color: var(--brown-dark);
+      font-size: 0.72rem;
       line-height: 1.5;
     }
 
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 6px;
     }
     .work-grid img {
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 1 / 1.32;
       object-fit: cover;
-      border-radius: 8px;
+      border-radius: 4px;
       background: var(--bg-beige);
     }
-    .work-grid img:first-child {
-      grid-column: 1 / -1;
-      aspect-ratio: 16 / 9;
-    }
-    .work-note {
-      margin: 14px 0 0;
-      color: var(--mocha-brand);
-      font-size: 0.72rem;
-      text-align: center;
+    .work-grid img:nth-child(7n + 1),
+    .work-grid img:nth-child(9n + 4) {
+      grid-row: span 2;
+      aspect-ratio: 1 / 2.68;
     }
 
     /* ---------- お客さまの声 ---------- */
     .voice-list { display: grid; gap: 16px; }
     .voice-card {
       position: relative;
-      padding: 24px 22px 20px;
+      display: block;
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
+      overflow: clip;
     }
     .voice-card::before {
       content: "“";
       position: absolute;
-      top: 6px; right: 16px;
+      bottom: 74px; right: 16px;
       color: var(--gold);
       font-family: var(--font-accent);
       font-size: 3rem;
       line-height: 1;
       opacity: 0.6;
+      z-index: 1;
+    }
+    .voice-card__photo {
+      aspect-ratio: 1 / 1.1;
+      object-fit: cover;
+    }
+    .voice-card__body {
+      position: relative;
+      z-index: 2;
+      padding: 18px 18px 20px;
     }
     .voice-card__theme {
       display: inline-block;
@@ -764,8 +773,8 @@
     .voice-card cite {
       display: block;
       margin-block-start: 12px;
-      color: var(--mocha-brand);
-      font-size: 0.76rem;
+      color: var(--brown-dark);
+      font-size: 0.78rem;
       font-style: normal;
     }
 
@@ -794,7 +803,7 @@
     .faq-list summary::-webkit-details-marker { display: none; }
     .faq-list summary::before {
       content: "Q";
-      color: var(--gold);
+      color: var(--brown-heading);
       font-family: var(--font-heading);
       font-size: 1.05rem;
       font-weight: 600;
@@ -802,7 +811,7 @@
     .faq-list summary::after {
       content: "+";
       justify-self: end;
-      color: var(--gold);
+      color: var(--brown-heading);
       font-family: var(--font-heading);
       font-size: 1.3rem;
       line-height: 1;
@@ -819,7 +828,7 @@
     }
     .faq-answer::before {
       content: "A";
-      color: var(--mocha-brand);
+      color: var(--brown-dark);
       font-family: var(--font-heading);
       font-size: 1rem;
       font-weight: 600;
@@ -877,7 +886,7 @@
       outline-offset: 1px;
       border-color: var(--brown-heading);
     }
-    ::placeholder { color: var(--mocha-brand); }
+    ::placeholder { color: var(--brown-dark); opacity: 0.72; }
 
     .store-grid { display: grid; gap: 10px; }
     .store-option {
@@ -905,8 +914,8 @@
     }
     .store-option span {
       display: block;
-      color: var(--mocha-brand);
-      font-size: 0.74rem;
+      color: var(--brown-dark);
+      font-size: 0.78rem;
       line-height: 1.4;
     }
     .store-option:has(input:checked) {
@@ -929,6 +938,7 @@
       grid-template-columns: 22px minmax(0, 1fr);
       gap: 10px;
       align-items: start;
+      min-height: 44px;
       color: var(--brown-dark);
       font-size: 0.89rem;
       line-height: 1.7;
@@ -1023,7 +1033,7 @@
     .sticky-cta .cta-button {
       min-height: 52px;
       padding-block: 13px;
-      font-size: 0.98rem;
+      font-size: 1.08rem;
       box-shadow: 0 4px 0 var(--cta-deep), 0 12px 22px var(--cta-glow);
     }
 
@@ -1061,6 +1071,7 @@
       .reason-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .reason-card:first-child { grid-column: 1 / -1; }
       .reason-card:first-child img { aspect-ratio: 21 / 9; }
+      .reason-card:first-child video { aspect-ratio: 21 / 9; }
 
       .flow-quote p { font-size: 1.9rem; }
 
@@ -1068,9 +1079,6 @@
 
       .proof-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
       .proof-card.-wide { grid-column: auto; }
-
-      .work-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-      .work-grid img:first-child { grid-column: span 2; aspect-ratio: auto; }
 
       .voice-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 
@@ -1083,6 +1091,10 @@
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .cta-button, .sticky-cta { transition: none; }
+    }
+
+    @media (max-width: 340px) {
+      .hero__title { font-size: 1.82rem; }
     }
   </style>
 </head>
@@ -1324,30 +1336,26 @@
           <p class="section__label">WORKS</p>
           <h2 class="section__title"><span>多くのふたりの指輪が、</span><span>ここから生まれています。</span></h2>
         </div>
-        <div class="proof-grid">
-          <div class="proof-card">
-            <strong><em>約</em>9,000本</strong>
-            <span>年間ブライダル<br>リング制作</span>
-          </div>
-          <div class="proof-card">
-            <strong>15,720件</strong>
-            <span>作品・メディア<br>掲載実績</span>
-            <small>※2021年6月時点の記載</small>
-          </div>
-          <div class="proof-card -wide">
-            <strong><em>★</em>4.9</strong>
-            <span>Googleクチコミ平均（想定枠）</span>
-            <small>※公開前に最新の確定値へ差し替え</small>
-          </div>
-        </div>
         <div class="work-grid" aria-label="作品例">
-          <img src="assets/ring-floral.jpg" alt="作品例：花とともに撮影した結婚指輪">
-          <img src="assets/ring-try.jpg" alt="作品例：指につけたゴールドのリング">
-          <img src="assets/sample-rings.jpg" alt="作品例：木製ケースに並ぶリング">
-          <img src="assets/craft-hands.jpg" alt="作品例：制作途中のリングを整える様子">
-          <img src="assets/workbench-rings.jpg" alt="作品例：作業机に並ぶリングサンプル">
+          <img src="assets/ring-grid-01.jpg" alt="指輪物撮り：木箱に収まった手作り結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-02.jpg" alt="指輪物撮り：丸いケースに並ぶプラチナとゴールドの結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-03.jpg" alt="指輪物撮り：白い石の上に置かれたゴールドリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-07.jpg" alt="指輪物撮り：木肌の上に重なる結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-08.jpg" alt="指輪物撮り：青い花と木箱の中の結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-09.jpg" alt="指輪物撮り：白い花に囲まれた結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-10.jpg" alt="指輪物撮り：緑の葉の中に置かれた結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-11.jpg" alt="指輪物撮り：植物の影に包まれた木箱のリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-12.jpg" alt="指輪物撮り：花の影とゴールドリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-13.jpg" alt="指輪物撮り：白い石の上に立つゴールドリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-14.jpg" alt="指輪物撮り：白い石の上に立つプラチナリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-15.jpg" alt="指輪物撮り：木箱に入った槌目の結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-16.jpg" alt="指輪物撮り：影の中で光るプラチナとゴールドのリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-17.jpg" alt="指輪物撮り：白い布の上に立つペアリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-18.jpg" alt="指輪物撮り：白い布と葉のそばに置かれたリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-19.jpg" alt="指輪物撮り：ピンクの花とゴールドリング" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-20.jpg" alt="指輪物撮り：花のそばに並ぶ結婚指輪" loading="lazy" decoding="async">
+          <img src="assets/ring-grid-21.jpg" alt="指輪物撮り：花に囲まれた木箱の中の結婚指輪" loading="lazy" decoding="async">
         </div>
-        <p class="work-note">制作例：プラチナ／ゴールド、鏡面・つや消し・槌目仕上げ など</p>
       </section>
 
       <!-- 8. お客さまの声 -->
@@ -1358,21 +1366,30 @@
           <p class="section__lead">予約前に感じていた不安も、<br>終わってみれば、ぜんぶ思い出。</p>
         </div>
         <div class="voice-list">
-          <article class="voice-card">
-            <span class="voice-card__theme">一緒に作った時間が思い出に</span>
-            <blockquote>指輪を見るたびに作った日のことを全部思い出せるんですよ</blockquote>
-            <cite>お客様インタビュー vol.14</cite>
-          </article>
-          <article class="voice-card">
-            <span class="voice-card__theme">初めてでも楽しい</span>
-            <blockquote>最初は、えっ……と思いました。作れるわけがないって</blockquote>
-            <cite>お客様インタビュー vol.15</cite>
-          </article>
-          <article class="voice-card">
-            <span class="voice-card__theme">自慢できる完成度</span>
-            <blockquote>Instagramにアップしたんですが、みんなもビックリしていましたね。</blockquote>
-            <cite>お客様インタビュー vol.07</cite>
-          </article>
+          <a class="voice-card" href="https://kamakura-chokin.com/voice26/" target="_blank" rel="noopener">
+            <img class="voice-card__photo" src="assets/voice-26.jpg" alt="お客さまインタビュー vol.26の先輩カップル写真" loading="lazy" decoding="async">
+            <div class="voice-card__body">
+              <span class="voice-card__theme">一緒に作った時間が思い出に</span>
+              <blockquote>二人で一緒に作ったので思い出にもなった</blockquote>
+              <cite>お客さまインタビュー vol.26</cite>
+            </div>
+          </a>
+          <a class="voice-card" href="https://kamakura-chokin.com/voice25/" target="_blank" rel="noopener">
+            <img class="voice-card__photo" src="assets/voice-25.jpg" alt="お客さまインタビュー vol.25の先輩カップル写真" loading="lazy" decoding="async">
+            <div class="voice-card__body">
+              <span class="voice-card__theme">初めてでも楽しい</span>
+              <blockquote>緊張もなくて、終始楽しかったです。</blockquote>
+              <cite>お客さまインタビュー vol.25</cite>
+            </div>
+          </a>
+          <a class="voice-card" href="https://kamakura-chokin.com/voice24/" target="_blank" rel="noopener">
+            <img class="voice-card__photo" src="assets/voice-24.jpg" alt="お客さまインタビュー vol.24の先輩カップル写真" loading="lazy" decoding="async">
+            <div class="voice-card__body">
+              <span class="voice-card__theme">棒から作ったとは思えない完成度</span>
+              <blockquote>金属の棒からこうなるんだって、嬉しかった</blockquote>
+              <cite>お客さまインタビュー vol.24</cite>
+            </div>
+          </a>
         </div>
       </section>
 
